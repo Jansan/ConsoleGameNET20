@@ -6,7 +6,11 @@ namespace ConsoleGameNET20
     {
         static void Main(string[] args)
         {
-            
+            Game game = new Game();
+            game.Run();
+
+            Console.WriteLine("Thank you for playing.");
+            Console.ReadKey();
         }
     }
 }
