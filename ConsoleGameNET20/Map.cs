@@ -1,18 +1,21 @@
-﻿namespace ConsoleGameNET20
+﻿using System;
+
+namespace ConsoleGameNET20
 {
     internal class Map
     {
       
-        private int width;
-        private int height;
+        public int Width { get; }
+        public int Height { get; }
+
         private readonly Cell[,] cells;
 
        
 
         public Map(int width, int height)
         {
-            this.width = width;
-            this.height = height;
+            Width = width;
+            Height = height;
 
             cells = new Cell[height, width];
 
@@ -24,5 +27,8 @@
                 }
             }
         }
+
+        internal Cell GetCell(int y, int x) => cells[y, x];
+        
     }
 }

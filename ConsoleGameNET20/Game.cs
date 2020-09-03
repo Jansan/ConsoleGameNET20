@@ -6,6 +6,8 @@ namespace ConsoleGameNET20
     {
         private Map map;
         private Hero hero;
+        
+
         internal void Run()
         {
             Initializer();
@@ -15,7 +17,33 @@ namespace ConsoleGameNET20
 
         private void Play()
         {
-            
+            bool gameInProgrees = true;
+            do
+            {
+                Drawmap();
+                //Drawmap
+                //Get command
+                //execute
+                //Drawmap
+                //enemy actions
+                //Drawmap
+
+                Console.ReadKey();
+
+            } while (gameInProgrees);
+        }
+
+        private void Drawmap()
+        {
+            for (int y = 0; y < map.Height; y++)
+            {
+                for (int x = 0; x < map.Width; x++)
+                {
+                    Cell cell = map.GetCell(y, x);
+                    Console.Write(cell.Symbol);
+                }
+                Console.WriteLine();
+            }
         }
 
         private void Initializer()
